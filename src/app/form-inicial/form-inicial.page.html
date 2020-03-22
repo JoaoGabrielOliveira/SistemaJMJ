@@ -1,50 +1,52 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button [routerLink]="['/home']" routerDirection="back">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-    </ion-button>
     <ion-title>
       Formulário de Relatório
     </ion-title>
-
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-button style="font-size: 80%;" [routerLink]="['/home']" routerDirection="back" fill="clear">
+      <ion-icon src='../assets/icones/arrow-undo.svg'></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card mode="ios">
+  <ion-card mode="ios" *ngIf="ListaDados[0]">
     <ion-card-header>
       <ion-card-title>Integrande do Grupo</ion-card-title>
       <ion-card-subtitle>É necessario que preenchem os tres primeiros campos</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
-      <ion-input type="text" placeholder="Digite nome "></ion-input>
-      <ion-input type="text" placeholder="Digite nome "></ion-input>
-      <ion-input type="text" placeholder="Digite nome "></ion-input>
-      <ion-input type="text" placeholder="Digite nome "></ion-input>
-      <ion-input type="text" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[0].nome" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[1].nome" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[2].nome" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[3].nome" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[4].nome" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" [(ngModel)]="formMembros[5].nome" placeholder="Digite nome "></ion-input>
     </ion-card-content>
   </ion-card>
 
-  <ion-card mode="ios">
+  <ion-card mode="ios"  *ngIf="ListaDados[1]">
     <ion-card-header>
       <ion-card-title>Pasteis</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
 
-      Carne:<ion-input type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
-      Queijo:<ion-input type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
-      Pizza:<ion-input type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
-      Frango:<ion-input type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
-      Calabresa:<ion-input type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
+      Carne:<ion-input     [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
+      Queijo:<ion-input    [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
+      Pizza:<ion-input     [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
+      Frango:<ion-input    [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
+      Calabresa:<ion-input [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
 
     </ion-card-content>
   </ion-card>
   
 
-  <ion-card mode="ios">
+  <ion-card mode="ios"  *ngIf="ListaDados[2]">
     <ion-card-header>
       
       <ion-card-title>Informação de Caixa</ion-card-title>
@@ -57,8 +59,22 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button (click)="onClick()" expand="block">
-    Enviar dados
-  </ion-button>
-
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    
+    <ion-button color="light" (click)="Voltar()"  *ngIf="ListaDados[1] || ListaDados[2]">
+      <ion-icon src='../assets/icones/arrow-back.svg'></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="EnviarDados()"  *ngIf="RelatorioCompleto[0] && RelatorioCompleto[1] && RelatorioCompleto[2]">
+      <ion-icon src='../assets/icones/send.svg'></ion-icon>Enviar Relatorio
+    </ion-button>
+
+    <ion-button color="light" (click)="Avancar()"  *ngIf="!ListaDados[2]">
+      <ion-icon src='../assets/icones/arrow-forward.svg'></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
