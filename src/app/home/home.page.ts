@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  CampoPreencido:boolean;
+
   constructor() {}
+
+  ionViewDidEnter() {
+    if(this.CampoPreencido){
+        
+    }
+  }
 
 }

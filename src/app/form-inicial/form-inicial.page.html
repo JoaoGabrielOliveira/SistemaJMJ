@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/home']" routerDirection="back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Formulário de Relatório
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title>Integrande do Grupo</ion-card-title>
+      <ion-card-subtitle>É necessario que preenchem os tres primeiros campos</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-input type="text" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" placeholder="Digite nome "></ion-input>
+      <ion-input type="text" placeholder="Digite nome "></ion-input>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title>Pasteis</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+
+      Carne:<ion-input type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
+      Queijo:<ion-input type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
+      Pizza:<ion-input type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
+      Frango:<ion-input type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
+      Calabresa:<ion-input type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
+
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card mode="ios">
+    <ion-card-header>
+      
+      <ion-card-title>Informação de Caixa</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+
+      <ion-input type="number" placeholder="Digite o valor do Caixa inicial"></ion-input>     
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="onClick()" expand="block">
+    Enviar dados
+  </ion-button>
+
+</ion-content>

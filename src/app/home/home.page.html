@@ -1,14 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Formulário de Relatório
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    
+    
+    <ion-button [routerLink]="['/form-inicial']" routerDirection="forward" expand="block">
+      Ir para Formulário Inicial
+    </ion-button>
+  
+    <ion-button [routerLink]="['/form-final']" routerDirection="forward" expand="block">
+      Ir para Formulário Final  </ion-button>
+
+    <ion-button style="margin-top: 50%;" (click)="onClick()" expand="block" disabled="true">
+        Gerar relatório
+    </ion-button>
+
   </div>
+
 </ion-content>
