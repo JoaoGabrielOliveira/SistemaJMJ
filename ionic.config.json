@@ -1,5 +1,7 @@
 {
   "name": "JMJ",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

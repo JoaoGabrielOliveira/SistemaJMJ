@@ -9,5 +9,7 @@ export class GlobaisService {
 
   public static relInicialPronto:boolean;
   public static relFinalPronto:boolean;
+
+  public static DadosInicias = {Membros:[{}], Pasteis:{}, ValorCaixa:0};
 }
 

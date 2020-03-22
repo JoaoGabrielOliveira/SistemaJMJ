@@ -1,14 +1,23 @@
 <ion-header>
   <ion-toolbar>
+    <ion-button style="font-size: 80%;" [routerLink]="['/home']" routerDirection="back" fill="clear">
+      Voltar
+    </ion-button>
+
     <ion-title>
-      Formulário de Relatório
+      Relatório Inicial
     </ion-title>
   </ion-toolbar>
+
   <ion-toolbar>
-    <ion-button style="font-size: 80%;" [routerLink]="['/home']" routerDirection="back" fill="clear">
-      <ion-icon src='../assets/icones/arrow-undo.svg'></ion-icon>
-    </ion-button>
+
+    <ion-text style="width: 100%;" color="primary">
+      <h3 *ngIf="ListaDados[0]">Vendedores da Semana</h3>
+      <h3 *ngIf="ListaDados[1]">Pasteis</h3>
+      <h3 *ngIf="ListaDados[2]">Financeiro</h3>
+    </ion-text>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
@@ -37,28 +46,34 @@
     <ion-card-content>
 
       Carne:<ion-input     [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
-      Queijo:<ion-input    [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
-      Pizza:<ion-input     [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
-      Frango:<ion-input    [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
-      Calabresa:<ion-input [(ngModel)]="formPasteis.carne"   type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
+      Queijo:<ion-input    [(ngModel)]="formPasteis.queijo"   type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
+      Pizza:<ion-input     [(ngModel)]="formPasteis.pizza"   type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
+      Frango:<ion-input    [(ngModel)]="formPasteis.frango"   type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
+      Calabresa:<ion-input [(ngModel)]="formPasteis.calabresa"   type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
 
     </ion-card-content>
   </ion-card>
   
 
-  <ion-card mode="ios"  *ngIf="ListaDados[2]">
+
+
+  <ion-card mode="ios"  *ngIf="ListaDados[2]" >
     <ion-card-header>
       
       <ion-card-title>Informação de Caixa</ion-card-title>
     </ion-card-header>
   
-    <ion-card-content>
+  <ion-card-content>
 
-      <ion-input type="number" placeholder="Digite o valor do Caixa inicial"></ion-input>     
+      <span style="float:left; padding: 8% 2%;">R$:</span><ion-input type="number" [(ngModel)]="formValorCaixa" style="float:left; width: 86%;" placeholder="Digite o valor do Caixa inicial"></ion-input>
 
     </ion-card-content>
-  </ion-card>
 
+    
+  </ion-card>
+  <div *ngIf="ListaDados[2]" >
+    <ion-label style="margin-left: 5%;font-size: 90%;">OBS: Use  <b>PONTO ( . )</b> ao inves de Virgula</ion-label>
+  </div>
 </ion-content>
 
 <ion-footer>
@@ -72,7 +87,7 @@
       <ion-icon src='../assets/icones/send.svg'></ion-icon>Enviar Relatorio
     </ion-button>
 
-    <ion-button color="light" (click)="Avancar()"  *ngIf="!ListaDados[2]">
+    <ion-button color="light" (click)="Avancar()">
       <ion-icon src='../assets/icones/arrow-forward.svg'></ion-icon>
     </ion-button>
 
