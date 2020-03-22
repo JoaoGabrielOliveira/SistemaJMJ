@@ -10,8 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content>  
   <ion-card mode="ios">
     <ion-card-header>
       <ion-card-title>Pasteis</ion-card-title>
@@ -19,11 +18,11 @@
   
     <ion-card-content>
 
-      Carne:<ion-input type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
-      Queijo:<ion-input type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
-      Pizza:<ion-input type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
-      Frango:<ion-input type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
-      Calabresa:<ion-input type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
+      Carne:    <ion-input [(ngModel)]="Pasteis.carne" type="number" placeholder="Digite o de pasteis de Carne"></ion-input>
+      Queijo:   <ion-input [(ngModel)]="Pasteis.queijo" type="number" placeholder="Digite o de pasteis de Queijo"></ion-input>
+      Pizza:    <ion-input [(ngModel)]="Pasteis.pizza" type="number" placeholder="Digite o de pasteis de Pizza"></ion-input>
+      Frango:   <ion-input [(ngModel)]="Pasteis.frango" type="number" placeholder="Digite o de pasteis de Frango"></ion-input>
+      Calabresa:<ion-input [(ngModel)]="Pasteis.calabresa" type="number" placeholder="Digite o de pasteis de Calabresa"></ion-input>
 
     </ion-card-content>
   </ion-card>
@@ -50,7 +49,7 @@
   
     <ion-card-content>
 
-      <ion-input type="number" placeholder="Digite de óleos comprados(CASO nenhum, não preencham):"></ion-input>     
+      <ion-input type="number" placeholder="Digite de óleos comprados(CASO nenhum, não preencham):"></ion-input>
       <ion-input type="number" placeholder="Digite de óleos usado:"></ion-input>     
       <ion-input type="number" placeholder="Pasteis vendidos sem fritar:"></ion-input>
       <ion-input type="number" style="font-size: 90%;" placeholder="Pasteis vendidos para vendedores:"></ion-input>
@@ -63,8 +62,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button (click)="onClick()" expand="block">
-    Enviar dados
+  <ion-button (click)="Confirmar()" expand="block">
+    Confirmar Relatorio
   </ion-button>
-
 </ion-content>

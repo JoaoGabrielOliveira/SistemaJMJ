@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-form-inicial',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormInicialPage implements OnInit {
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 
   ngOnInit() {
   }
